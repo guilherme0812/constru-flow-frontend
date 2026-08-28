@@ -1,5 +1,10 @@
 import Paper from "@/components/ui/paper"
-import DemandCard from "./components/demandCard"
+import DemandCard, { type Demand } from "./components/demandCard"
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet"
+import Leaflet from "leaflet"
+import { useState } from "react"
+import MapWrapper from "./components/mapWrapper"
+import DemandHeader from "./components/demandHeader"
 
 const demands = [
   {
@@ -50,8 +55,8 @@ const demands = [
       "Design and installation of new electrical infrastructure for a 45,000 sq ft warehouse facility, including 3-phase power distribution, LED lighting retrofit, backup generator integration, and fire alarm system wiring.",
     categoryId: "f6a7b8c9-6666-4f0a-9b1c-d4e5f6a7b8c9",
     worksiteLocation: "4500 Riverside Parkway, Columbus, OH 43215",
-    locationLat: 39.9622,
-    locationLng: -83.0007,
+    locationLat: 38.9622,
+    locationLng: -73.0007,
     estimatedStartDate: "2027-01-05",
     executionPeriodDays: 90,
     budgetRange: "$310,000 - $450,000",
@@ -72,8 +77,8 @@ const demands = [
       "Installation of a complete HVAC system for a new 3-wing medical center expansion, including cleanroom-grade air filtration, ductwork, and climate control zoning compliant with healthcare facility standards.",
     categoryId: "b8c9d0e1-8888-4b2c-9d3e-f6a7b8c9d0e1",
     worksiteLocation: "780 Sunset Boulevard, Phoenix, AZ 85004",
-    locationLat: 33.4519,
-    locationLng: -112.0687,
+    locationLat: 50.4519,
+    locationLng: -200.0687,
     estimatedStartDate: "2026-12-01",
     executionPeriodDays: 120,
     budgetRange: "$540,000 - $700,000",
@@ -95,7 +100,7 @@ const demands = [
     categoryId: "d0e1f2a3-0000-4d4e-9f5a-b8c9d0e1f2a3",
     worksiteLocation: "9800 Pinehill Road, Charlotte, NC 28273",
     locationLat: 35.1868,
-    locationLng: -80.942,
+    locationLng: -80,
     estimatedStartDate: "2026-10-20",
     executionPeriodDays: 75,
     budgetRange: "$620,000 - $890,000",
@@ -111,11 +116,22 @@ const demands = [
 ]
 
 function DemandsPage() {
+  const [selectedDemand, setSelectedDemand] = useState<Demand>()
+
+  const handleSelectDemand = (demand: Demand) => {
+    setSelectedDemand(undefined)
+
+    setTimeout(() => {
+      setSelectedDemand(demand)
+    }, 100)
+  }
+
   return (
     <>
       <div className="grid grid-cols-3 gap-4">
         <div>
           <header className="mb-4 font-bold">Filter By:</header>
+          <DemandHeader />
         </div>
 
         <div>
@@ -125,12 +141,18 @@ function DemandsPage() {
 
           <div className="flex flex-col gap-4 max-h-[calc(100vh-4.5rem)] scrollbar-thin scrollbar-thumb-primary scrollbar-track-transparent overflow-y-auto">
             {demands.map((item, index) => (
-              <DemandCard key={index} demand={item as any} />
+              <DemandCard
+                key={index}
+                handleClick={handleSelectDemand}
+                demand={item as any}
+              />
             ))}
           </div>
         </div>
 
-        <div className="bg-gray-500"></div>
+        <div className="relative w-full h-full">
+          {selectedDemand && <MapWrapper selectedDemand={selectedDemand} />}
+        </div>
       </div>
     </>
   )

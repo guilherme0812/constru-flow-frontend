@@ -1,6 +1,6 @@
 import { MapPin, Calendar, Wallet, Clock } from "lucide-react"
 
-interface Demand {
+export interface Demand {
   id: string
   title: string
   description: string
@@ -11,6 +11,8 @@ interface Demand {
   requiredDocuments: string[]
   applicationDeadline: string
   status: "published" | "draft" | "closed"
+  locationLat: number
+  locationLng: number
 }
 
 const statusConfig = {
@@ -44,13 +46,22 @@ function getDaysUntilDeadline(deadline: string) {
   return Math.ceil(diff / (1000 * 60 * 60 * 24))
 }
 
-export default function DemandCard({ demand }: { demand: Demand }) {
+type DemandCardType = {
+  demand: Demand
+  handleClick(demand: Demand): void
+}
+
+export default function DemandCard({ demand, handleClick }: DemandCardType) {
   const status = statusConfig[demand.status]
   const daysLeft = getDaysUntilDeadline(demand.applicationDeadline)
   const isUrgent = daysLeft > 0 && daysLeft <= 30
 
   return (
-    <div className="group relative flex flex-col gap-4 rounded-xl border border-border bg-card p-5 transition-shadow hover:shadow-md">
+    <div
+      role="button"
+      onClick={() => handleClick(demand)}
+      className="group hover:cursor-pointer relative flex flex-col gap-4 rounded-xl border border-border bg-card p-5 transition-shadow hover:shadow-md"
+    >
       <div className="flex items-start justify-between gap-3">
         <div className="flex flex-col gap-1.5">
           <span

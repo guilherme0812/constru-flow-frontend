@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@plugin "tailwind-scrollbar";
 @import "@fontsource-variable/inter";
 /* @import "@fontsource-variable/general-sans"; */
 @import "@fontsource-variable/plus-jakarta-sans";
@@ -130,4 +129,12 @@
   html {
     @apply font-sans;
   }
+  .leaflet-container img {
+    max-width: none !important;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
