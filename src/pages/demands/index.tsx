@@ -128,13 +128,13 @@ function DemandsPage() {
 
   return (
     <>
-      <div className="grid grid-cols-3 gap-4">
-        <div>
+      <div className="grid grid-cols-12 gap-4">
+        <div className="col-span-3">
           <header className="mb-4 font-bold">Filter By:</header>
           <DemandHeader />
         </div>
 
-        <div>
+        <div className="col-span-4">
           <header className="mb-4 font-bold">
             {demands.length} demands founds
           </header>
@@ -150,7 +150,7 @@ function DemandsPage() {
           </div>
         </div>
 
-        <div className="relative w-full h-full">
+        <div className="col-span-5 relative w-full h-full">
           {selectedDemand && <MapWrapper selectedDemand={selectedDemand} />}
         </div>
       </div>

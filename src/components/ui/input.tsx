@@ -1,17 +1,44 @@
 import * as React from "react"
 import { Input as InputPrimitive } from "@base-ui/react/input"
+import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
-function Input({ className, type, ...props }: React.ComponentProps<"input">) {
+const inputVariants = cva(
+  // classes base, comuns a todas as variantes
+  "w-full min-w-0 rounded-md border border-input bg-transparent shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:border-0 file:bg-transparent file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 dark:bg-input/30 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40",
+  {
+    variants: {
+      inputSize: {
+        default: "h-9 px-2.5 py-1 text-base file:h-7 file:text-sm md:text-sm",
+        sm: "h-8 px-2 py-0.5 text-sm file:h-6 file:text-xs md:text-xs",
+        lg: "h-10 px-3 py-1.5 text-base file:h-8 file:text-sm md:text-base",
+      },
+      variant: {
+        default: "",
+        ghost: "border-transparent shadow-none bg-transparent",
+        error: "border-destructive ring-destructive/20",
+        filled: "bg-slate-200",
+      },
+    },
+    defaultVariants: {
+      inputSize: "default",
+      variant: "default",
+    },
+  }
+)
+
+interface InputProps
+  extends
+    Omit<React.ComponentProps<"input">, "size">,
+    VariantProps<typeof inputVariants> {}
+
+function Input({ className, type, inputSize, variant, ...props }: InputProps) {
   return (
     <InputPrimitive
       type={type}
       data-slot="input"
-      className={cn(
-        "h-9 w-full min-w-0 rounded-md border border-input bg-transparent px-2.5 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-destructive/20 md:text-sm dark:bg-input/30 dark:aria-invalid:border-destructive/50 dark:aria-invalid:ring-destructive/40",
-        className
-      )}
+      className={cn(inputVariants({ inputSize, variant, className }))}
       {...props}
     />
   )
