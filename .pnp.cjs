@@ -33,6 +33,7 @@ const RAW_RUNTIME_STATE =
           ["@fontsource-variable/inter", "npm:5.3.0"],\
           ["@fontsource-variable/plus-jakarta-sans", "npm:5.3.0"],\
           ["@tailwindcss/vite", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:4.3.3"],\
+          ["@tanstack/react-query", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:5.102.8"],\
           ["@types/leaflet", "npm:1.9.22"],\
           ["@types/node", "npm:24.13.3"],\
           ["@types/react", "npm:19.2.18"],\
@@ -1435,6 +1436,38 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@tanstack/query-core", [\
+      ["npm:5.102.8", {\
+        "packageLocation": "../../.yarn/berry/cache/@tanstack-query-core-npm-5.102.8-503e3f5e26-10c0.zip/node_modules/@tanstack/query-core/",\
+        "packageDependencies": [\
+          ["@tanstack/query-core", "npm:5.102.8"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@tanstack/react-query", [\
+      ["npm:5.102.8", {\
+        "packageLocation": "../../.yarn/berry/cache/@tanstack-react-query-npm-5.102.8-54313789b8-10c0.zip/node_modules/@tanstack/react-query/",\
+        "packageDependencies": [\
+          ["@tanstack/react-query", "npm:5.102.8"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:5.102.8", {\
+        "packageLocation": "./.yarn/__virtual__/@tanstack-react-query-virtual-535eb2f6bd/3/.yarn/berry/cache/@tanstack-react-query-npm-5.102.8-54313789b8-10c0.zip/node_modules/@tanstack/react-query/",\
+        "packageDependencies": [\
+          ["@tanstack/query-core", "npm:5.102.8"],\
+          ["@tanstack/react-query", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:5.102.8"],\
+          ["@types/react", "npm:19.2.18"],\
+          ["react", "npm:19.0.0-rc.1"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@ts-morph/common", [\
       ["npm:0.27.0", {\
         "packageLocation": "../../.yarn/berry/cache/@ts-morph-common-npm-0.27.0-1881357cf0-10c0.zip/node_modules/@ts-morph/common/",\
@@ -2303,6 +2336,7 @@ const RAW_RUNTIME_STATE =
           ["@fontsource-variable/inter", "npm:5.3.0"],\
           ["@fontsource-variable/plus-jakarta-sans", "npm:5.3.0"],\
           ["@tailwindcss/vite", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:4.3.3"],\
+          ["@tanstack/react-query", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:5.102.8"],\
           ["@types/leaflet", "npm:1.9.22"],\
           ["@types/node", "npm:24.13.3"],\
           ["@types/react", "npm:19.2.18"],\
