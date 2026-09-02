@@ -1,7 +1,6 @@
 import { Checkbox } from "@/components/ui/checkbox"
 import {
   Field,
-  FieldContent,
   FieldDescription,
   FieldGroup,
   FieldTitle,
@@ -9,89 +8,16 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Slider } from "@/components/ui/slider"
+import { useCategories } from "@/hooks/categories/useCategories"
 import { useState } from "react"
-
-export const WORK_CATEGORIES = [
-  {
-    value: "residential_construction",
-    label: "Residential Construction",
-    description: "Houses, condominiums, residential buildings",
-    icon: "Home",
-  },
-  {
-    value: "commercial_construction",
-    label: "Commercial Construction",
-    description: "Stores, malls, offices",
-    icon: "Building2",
-  },
-  {
-    value: "industrial_construction",
-    label: "Industrial Construction",
-    description: "Warehouses, factories, industrial plants",
-    icon: "Factory",
-  },
-  {
-    value: "road_infrastructure",
-    label: "Road Infrastructure",
-    description: "Roads, highways, bridges, overpasses",
-    icon: "Route",
-  },
-  {
-    value: "urban_infrastructure",
-    label: "Urban Infrastructure",
-    description: "Sanitation, drainage, water/sewage networks",
-    icon: "Droplets",
-  },
-  {
-    value: "public_institutional",
-    label: "Public / Institutional Works",
-    description: "Schools, hospitals, public buildings",
-    icon: "Landmark",
-  },
-  {
-    value: "energy",
-    label: "Energy",
-    description: "Substations, power grids, plants, solar energy",
-    icon: "Zap",
-  },
-  {
-    value: "earthworks_foundations",
-    label: "Earthworks & Foundations",
-    icon: "Mountain",
-  },
-  {
-    value: "renovation_retrofit",
-    label: "Renovation & Retrofit",
-    icon: "Hammer",
-  },
-  {
-    value: "demolition",
-    label: "Demolition",
-    icon: "Wrecking Ball" as string, // note: not a real Lucide icon, see below
-    description: "See note below on icon alternatives",
-  },
-  {
-    value: "landscaping_urbanization",
-    label: "Landscaping & Urbanization",
-    icon: "Trees",
-  },
-  {
-    value: "port_maritime_works",
-    label: "Port & Maritime Works",
-    icon: "Anchor",
-  },
-]
 
 function DemandHeader() {
   const [value, setValue] = useState([200, 800])
 
-  function formatDate(dateString: string) {
-    return new Date(dateString).toLocaleDateString("en-US", {
-      day: "2-digit",
-      month: "short",
-      year: "numeric",
-    })
-  }
+  const { data, isLoading, error } = useCategories()
+
+  if (isLoading) return <p>Loading...</p>
+  if (error) return <p>Error loading categories</p>
 
   return (
     <div>
@@ -130,14 +56,14 @@ function DemandHeader() {
         <FieldTitle className="uppercase font-semibold">CATEGORIES</FieldTitle>
 
         <div className="flex flex-col gap-2">
-          {WORK_CATEGORIES.map((item, index) => (
+          {data?.map((item, index) => (
             <Field orientation="horizontal" key={index}>
               <Checkbox
                 id="terms-checkbox"
                 className="size-6"
                 name="terms-checkbox"
               />
-              <Label htmlFor="terms-checkbox">{item.label}</Label>
+              <Label htmlFor="terms-checkbox">{item.name}</Label>
             </Field>
           ))}
         </div>
