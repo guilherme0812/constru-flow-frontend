@@ -12,9 +12,17 @@ const defaultIcon = L.icon({
   shadowSize: [41, 41],
 })
 
-function MapWrapper({ selectedDemand }: { selectedDemand: Demand }) {
+type MapWrapperProps = {
+  selectedDemand: Demand
+  containerClasses?: string
+}
+
+function MapWrapper({
+  selectedDemand,
+  containerClasses = "h-full w-full",
+}: MapWrapperProps) {
   return (
-    <div className="absolute z-10 h-full w-full bg-gray-300">
+    <div className={`absolute z-10 bg-gray-300 ${containerClasses}`}>
       <MapContainer
         className="h-full w-full"
         center={[selectedDemand.locationLat, selectedDemand.locationLng]}

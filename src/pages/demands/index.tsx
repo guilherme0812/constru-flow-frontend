@@ -11,11 +11,12 @@ function DemandsPage() {
   const { data } = useDemands()
 
   const handleSelectDemand = (demand: DemandDataType) => {
-    setSelectedDemand(undefined)
-
-    setTimeout(() => {
-      setSelectedDemand(demand)
-    }, 100)
+    if (demand.id != selectedDemand?.id) {
+      setSelectedDemand(undefined)
+      setTimeout(() => {
+        setSelectedDemand(demand)
+      }, 100)
+    }
   }
 
   return (
@@ -36,7 +37,7 @@ function DemandsPage() {
               <DemandCard
                 key={index}
                 handleClick={handleSelectDemand}
-                demand={item as any}
+                demand={item}
               />
             ))}
           </div>

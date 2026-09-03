@@ -1,4 +1,3 @@
-import type { ReactNode } from "react"
 import { NavLink, Outlet } from "react-router-dom"
 import {
   LuBuilding,
@@ -9,7 +8,7 @@ import {
 } from "react-icons/lu"
 import UserCardInfo from "@/components/ui/userCardInfo"
 
-function AuthLayout({ children }: { children: ReactNode }) {
+function AuthLayout() {
   return (
     <>
       <>
@@ -19,7 +18,7 @@ function AuthLayout({ children }: { children: ReactNode }) {
             <div className="flex flex-col gap-4">
               <UserCardInfo />
 
-              <div className="bg-emerald-600 hover:bg-emerald-700 transition-all duration-150 px-4 py-3 font-semibold rounded-md text-sm flex gap-3 items-center text-white">
+              <div className="bg-secondary hover:bg-cyan-700 transition-all duration-150 px-4 py-3 font-semibold rounded-md text-sm flex gap-3 items-center text-white">
                 <LuPlus />
                 Create
               </div>
