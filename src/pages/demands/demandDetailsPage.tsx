@@ -136,10 +136,20 @@ function DemandDetailPage() {
 
       <div className="col-span-4 ">
         <div className="bg-background p-4 rounded-lg shadow">
-          <div>
-            <h3 className="text-sm mb-4 text-muted-foreground">
+          <div className="flex items-center justify-between mb-4">
+            <h3 className="text-sm text-muted-foreground">
               Apply for this tender
             </h3>
+
+            <span
+              className={`inline-flex w-fit items-center gap-1.5 rounded-full border px-2.5 py-0.5 text-xs font-medium ${status.className}`}
+            >
+              <span className={`h-1.5 w-1.5 rounded-full ${status.dot}`} />
+              {status.label}
+            </span>
+          </div>
+
+          <div>
             <span className="font-bold text-lg">{demand?.budgetRange}</span>
           </div>
 
