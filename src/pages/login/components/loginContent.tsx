@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import {
   Field,
   FieldDescription,
+  FieldError,
   FieldGroup,
   FieldLabel,
   FieldSet,
@@ -9,18 +10,66 @@ import {
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 import { Switch } from "@/components/ui/switch"
-import { NavLink } from "react-router-dom"
+import { NavLink, Navigate, useNavigate } from "react-router-dom"
 import { IoLogoGoogle } from "react-icons/io"
+import { zodResolver } from "@hookform/resolvers/zod"
+import z from "zod/v3"
+import { useForm } from "react-hook-form"
+import { useAuth } from "@/hooks/auth/useAuth"
+
+const loginSchema = z.object({
+  email: z
+    .string()
+    .min(1, "The email is required")
+    .email("Please enter a valid email address"),
+  password: z
+    .string()
+    .min(1, "The password is required")
+    .min(6, "The password must be at least 6 characters long"),
+  rememberMe: z.boolean().optional(),
+})
+
+type LoginFormData = z.infer<typeof loginSchema>
 
 function LoginContent() {
+  const { login } = useAuth()
+  const navigate = useNavigate()
+
+  const {
+    register,
+    handleSubmit,
+
+    formState: { errors, isSubmitting },
+  } = useForm<LoginFormData>({
+    resolver: zodResolver(loginSchema),
+    defaultValues: {
+      email: "",
+      password: "",
+      rememberMe: false,
+    },
+  })
+
+  async function onSubmit(data: LoginFormData) {
+    // chamada de login aqui
+    console.log(data)
+    try {
+      await login({
+        email: data.email,
+        password: data.password,
+      })
+
+      navigate("/demands")
+    } catch (error) {}
+  }
+
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <FieldGroup>
           <FieldSet>
             <header>
               <h2 className="font-semibold text-2xl text-center">
-                Welcome back to Contru-flow
+                Welcome back to Constru-flow
               </h2>
               <FieldDescription className="text-center">
                 Please enter your credentials to access your account.
@@ -28,29 +77,35 @@ function LoginContent() {
             </header>
 
             <FieldGroup>
-              <Field>
-                <FieldLabel htmlFor="checkout-7j9-card-name-43j">
-                  Email
-                </FieldLabel>
+              <Field data-invalid={!!errors.email}>
+                <FieldLabel htmlFor="email">Email</FieldLabel>
                 <Input
+                  id="email"
                   variant="filled"
                   placeholder="Ex: john.doe@example.com"
-                  required
+                  aria-invalid={!!errors.email}
+                  {...register("email")}
                 />
+                {errors.email && (
+                  <FieldError>{errors.email.message}</FieldError>
+                )}
               </Field>
             </FieldGroup>
 
             <FieldGroup>
-              <Field>
-                <FieldLabel htmlFor="checkout-7j9-card-name-43j">
-                  Password
-                </FieldLabel>
+              <Field data-invalid={!!errors.password}>
+                <FieldLabel htmlFor="password">Password</FieldLabel>
                 <Input
+                  id="password"
                   variant="filled"
                   placeholder="Ex: your password"
-                  required
                   type="password"
+                  aria-invalid={!!errors.password}
+                  {...register("password")}
                 />
+                {errors.password && (
+                  <FieldError>{errors.password.message}</FieldError>
+                )}
               </Field>
             </FieldGroup>
 
@@ -67,14 +122,21 @@ function LoginContent() {
               orientation="horizontal"
               className="w-full flex justify-between"
             >
-              <FieldLabel htmlFor="2fa" className="flex w-full flex-1">
+              <FieldLabel htmlFor="rememberMe" className="flex w-full flex-1">
                 Remember sign in details
               </FieldLabel>
-              <Switch id="2fa" size="lg" />
+              <Switch id="rememberMe" size="lg" {...register("rememberMe")} />
             </Field>
 
             <FieldGroup>
-              <Button size="lg">Log in</Button>
+              <Button
+                size="lg"
+                type="submit"
+                variant="secondary"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Entrando..." : "Log in"}
+              </Button>
             </FieldGroup>
 
             <div className="flex items-center gap-4">

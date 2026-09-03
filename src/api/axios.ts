@@ -1,3 +1,4 @@
+import { TOKEN_STORAGE_KEY } from "@/context/authContext";
 import axios from "axios"
 
 const apiInstance = axios.create({
@@ -8,7 +9,7 @@ const apiInstance = axios.create({
 })
 
 apiInstance.interceptors.request.use((config) => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem(TOKEN_STORAGE_KEY);
     if (token) {
         config.headers.Authorization = `Bearer ${token}`;
     }

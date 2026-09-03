@@ -32,6 +32,7 @@ const RAW_RUNTIME_STATE =
           ["@eslint/js", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:10.0.1"],\
           ["@fontsource-variable/inter", "npm:5.3.0"],\
           ["@fontsource-variable/plus-jakarta-sans", "npm:5.3.0"],\
+          ["@hookform/resolvers", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:5.9.1"],\
           ["@tailwindcss/vite", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:4.3.3"],\
           ["@tanstack/react-query", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:5.102.8"],\
           ["@types/leaflet", "npm:1.9.22"],\
@@ -54,6 +55,7 @@ const RAW_RUNTIME_STATE =
           ["prettier-plugin-tailwindcss", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:0.8.1"],\
           ["react", "npm:19.0.0-rc.1"],\
           ["react-dom", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:19.0.0-rc.1"],\
+          ["react-hook-form", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:7.87.0"],\
           ["react-icons", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:5.7.0"],\
           ["react-leaflet", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:5.0.0-rc.2"],\
           ["react-router-dom", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:7.18.2"],\
@@ -64,7 +66,8 @@ const RAW_RUNTIME_STATE =
           ["tw-animate-css", "npm:1.4.0"],\
           ["typescript", "patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=5786d5"],\
           ["typescript-eslint", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:8.68.0"],\
-          ["vite", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:8.2.2"]\
+          ["vite", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:8.2.2"],\
+          ["zod", "npm:4.5.4"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -849,6 +852,125 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@hookform/resolvers", [\
+      ["npm:5.9.1", {\
+        "packageLocation": "../../.yarn/berry/cache/@hookform-resolvers-npm-5.9.1-34b8f4e2d2-10c0.zip/node_modules/@hookform/resolvers/",\
+        "packageDependencies": [\
+          ["@hookform/resolvers", "npm:5.9.1"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:5.9.1", {\
+        "packageLocation": "./.yarn/__virtual__/@hookform-resolvers-virtual-e2b6bfb165/3/.yarn/berry/cache/@hookform-resolvers-npm-5.9.1-34b8f4e2d2-10c0.zip/node_modules/@hookform/resolvers/",\
+        "packageDependencies": [\
+          ["@hookform/resolvers", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:5.9.1"],\
+          ["@sinclair/typebox", null],\
+          ["@standard-schema/spec", null],\
+          ["@standard-schema/utils", "npm:0.3.0"],\
+          ["@types/ajv", null],\
+          ["@types/ajv-errors", null],\
+          ["@types/ajv-formats", null],\
+          ["@types/arktype", null],\
+          ["@types/ata-validator", null],\
+          ["@types/class-transformer", null],\
+          ["@types/class-validator", null],\
+          ["@types/computed-types", null],\
+          ["@types/effect", null],\
+          ["@types/fluentvalidation-ts", null],\
+          ["@types/fp-ts", null],\
+          ["@types/io-ts", null],\
+          ["@types/joi", null],\
+          ["@types/nope-validator", null],\
+          ["@types/react-hook-form", null],\
+          ["@types/sinclair__typebox", null],\
+          ["@types/standard-schema__spec", null],\
+          ["@types/superstruct", null],\
+          ["@types/typanion", null],\
+          ["@types/typeschema__main", null],\
+          ["@types/valibot", null],\
+          ["@types/vest", null],\
+          ["@types/vinejs__vine", null],\
+          ["@types/yup", null],\
+          ["@types/zod", null],\
+          ["@typeschema/main", null],\
+          ["@vinejs/vine", null],\
+          ["ajv", null],\
+          ["ajv-errors", null],\
+          ["ajv-formats", null],\
+          ["arktype", null],\
+          ["ata-validator", null],\
+          ["class-transformer", null],\
+          ["class-validator", null],\
+          ["computed-types", null],\
+          ["effect", null],\
+          ["fluentvalidation-ts", null],\
+          ["fp-ts", null],\
+          ["io-ts", null],\
+          ["joi", null],\
+          ["nope-validator", null],\
+          ["react-hook-form", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:7.87.0"],\
+          ["superstruct", null],\
+          ["typanion", null],\
+          ["valibot", null],\
+          ["vest", null],\
+          ["yup", null],\
+          ["zod", "npm:4.5.4"]\
+        ],\
+        "packagePeers": [\
+          "@sinclair/typebox",\
+          "@standard-schema/spec",\
+          "@types/ajv-errors",\
+          "@types/ajv-formats",\
+          "@types/ajv",\
+          "@types/arktype",\
+          "@types/ata-validator",\
+          "@types/class-transformer",\
+          "@types/class-validator",\
+          "@types/computed-types",\
+          "@types/effect",\
+          "@types/fluentvalidation-ts",\
+          "@types/fp-ts",\
+          "@types/io-ts",\
+          "@types/joi",\
+          "@types/nope-validator",\
+          "@types/react-hook-form",\
+          "@types/sinclair__typebox",\
+          "@types/standard-schema__spec",\
+          "@types/superstruct",\
+          "@types/typanion",\
+          "@types/typeschema__main",\
+          "@types/valibot",\
+          "@types/vest",\
+          "@types/vinejs__vine",\
+          "@types/yup",\
+          "@types/zod",\
+          "@typeschema/main",\
+          "@vinejs/vine",\
+          "ajv-errors",\
+          "ajv-formats",\
+          "ajv",\
+          "arktype",\
+          "ata-validator",\
+          "class-transformer",\
+          "class-validator",\
+          "computed-types",\
+          "effect",\
+          "fluentvalidation-ts",\
+          "fp-ts",\
+          "io-ts",\
+          "joi",\
+          "nope-validator",\
+          "react-hook-form",\
+          "superstruct",\
+          "typanion",\
+          "valibot",\
+          "vest",\
+          "yup",\
+          "zod"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@humanfs/core", [\
       ["npm:0.19.2", {\
         "packageLocation": "../../.yarn/berry/cache/@humanfs-core-npm-0.19.2-ad081ed090-10c0.zip/node_modules/@humanfs/core/",\
@@ -1256,6 +1378,15 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/@sindresorhus-merge-streams-npm-4.0.0-28e7c03ac1-10c0.zip/node_modules/@sindresorhus/merge-streams/",\
         "packageDependencies": [\
           ["@sindresorhus/merge-streams", "npm:4.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["@standard-schema/utils", [\
+      ["npm:0.3.0", {\
+        "packageLocation": "../../.yarn/berry/cache/@standard-schema-utils-npm-0.3.0-37537c524c-10c0.zip/node_modules/@standard-schema/utils/",\
+        "packageDependencies": [\
+          ["@standard-schema/utils", "npm:0.3.0"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -2335,6 +2466,7 @@ const RAW_RUNTIME_STATE =
           ["@eslint/js", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:10.0.1"],\
           ["@fontsource-variable/inter", "npm:5.3.0"],\
           ["@fontsource-variable/plus-jakarta-sans", "npm:5.3.0"],\
+          ["@hookform/resolvers", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:5.9.1"],\
           ["@tailwindcss/vite", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:4.3.3"],\
           ["@tanstack/react-query", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:5.102.8"],\
           ["@types/leaflet", "npm:1.9.22"],\
@@ -2357,6 +2489,7 @@ const RAW_RUNTIME_STATE =
           ["prettier-plugin-tailwindcss", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:0.8.1"],\
           ["react", "npm:19.0.0-rc.1"],\
           ["react-dom", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:19.0.0-rc.1"],\
+          ["react-hook-form", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:7.87.0"],\
           ["react-icons", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:5.7.0"],\
           ["react-leaflet", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:5.0.0-rc.2"],\
           ["react-router-dom", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:7.18.2"],\
@@ -2367,7 +2500,8 @@ const RAW_RUNTIME_STATE =
           ["tw-animate-css", "npm:1.4.0"],\
           ["typescript", "patch:typescript@npm%3A6.0.3#optional!builtin<compat/typescript>::version=6.0.3&hash=5786d5"],\
           ["typescript-eslint", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:8.68.0"],\
-          ["vite", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:8.2.2"]\
+          ["vite", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:8.2.2"],\
+          ["zod", "npm:4.5.4"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -5230,6 +5364,28 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["react-hook-form", [\
+      ["npm:7.87.0", {\
+        "packageLocation": "../../.yarn/berry/cache/react-hook-form-npm-7.87.0-efa9bad904-10c0.zip/node_modules/react-hook-form/",\
+        "packageDependencies": [\
+          ["react-hook-form", "npm:7.87.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:7.87.0", {\
+        "packageLocation": "./.yarn/__virtual__/react-hook-form-virtual-dc330d1205/3/.yarn/berry/cache/react-hook-form-npm-7.87.0-efa9bad904-10c0.zip/node_modules/react-hook-form/",\
+        "packageDependencies": [\
+          ["@types/react", "npm:19.2.18"],\
+          ["react", "npm:19.0.0-rc.1"],\
+          ["react-hook-form", "virtual:d3413046ddbb5e8de5907d3fa972f276a55a5cf5269f64190d64819374ebb2d28fb10d14a914f17323ded16d4d28284fa6d5d48fea9e46c835a3cd836fec7c89#npm:7.87.0"]\
+        ],\
+        "packagePeers": [\
+          "@types/react",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["react-icons", [\
       ["npm:5.7.0", {\
         "packageLocation": "../../.yarn/berry/cache/react-icons-npm-5.7.0-bdc6147bd0-10c0.zip/node_modules/react-icons/",\
@@ -6356,6 +6512,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/zod-npm-4.4.3-36e81f791e-10c0.zip/node_modules/zod/",\
         "packageDependencies": [\
           ["zod", "npm:4.4.3"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:4.5.4", {\
+        "packageLocation": "../../.yarn/berry/cache/zod-npm-4.5.4-5303b3afef-10c0.zip/node_modules/zod/",\
+        "packageDependencies": [\
+          ["zod", "npm:4.5.4"]\
         ],\
         "linkType": "HARD"\
       }]\
