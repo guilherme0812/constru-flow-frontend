@@ -8,14 +8,3 @@ export const useCategories = () => {
     });
 };
 
-// export const useCreateUser = () => {
-//   const queryClient = useQueryClient();
-
-//   return useMutation({
-//     mutationFn: createUser,
-//     onSuccess: () => {
-//       // Refetch the users list after a successful create
-//       queryClient.invalidateQueries({ queryKey: ['users'] });
-//     },
-//   });
-// };

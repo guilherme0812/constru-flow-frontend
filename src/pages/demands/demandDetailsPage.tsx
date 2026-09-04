@@ -8,8 +8,12 @@ import MapWrapper from "./components/mapWrapper"
 import { IoStar, IoStarOutline } from "react-icons/io5"
 import { Button } from "@/components/ui/button"
 import { LuFileSliders } from "react-icons/lu"
+import CreateApplicationDialog from "./components/createApplicationDialog"
+import { useState } from "react"
 
 function DemandDetailPage() {
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+
   const { id } = useParams<{ id: string }>()
   const { user } = useAuth()
 
@@ -180,10 +184,17 @@ function DemandDetailPage() {
             variant="secondary"
             className="w-full"
             size="lg"
+            onClick={() => setModalIsOpen(true)}
             disabled={user?.type == "contractor"}
           >
-            Apply now
+            Make a proposal
           </Button>
+
+          <CreateApplicationDialog
+            open={modalIsOpen}
+            demand={demand}
+            handleClose={() => setModalIsOpen(false)}
+          />
         </div>
       </div>
     </div>

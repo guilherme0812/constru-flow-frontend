@@ -9,7 +9,7 @@ export type UserDataType = {
     createdAt: string
     updatedAt: string
     contractor: Contractor
-    provider: null
+    provider: Provider
 }
 
 export interface Contractor {
@@ -21,6 +21,19 @@ export interface Contractor {
     averageRating: number
     isDocumentVerified: boolean
 }
+
+export type Provider = {
+    userId: string
+    legalName: string
+    taxId: string
+    providerType: string
+    operatingRegions: string[]
+    teamCapacity: number
+    averageRating: number
+    portfolio: string[]
+    isDocumentVerified: boolean
+}
+
 
 
 export type LoginDataType = {
