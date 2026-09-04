@@ -39,7 +39,7 @@ function AuthLayout() {
               </NavLink>
 
               <NavLink
-                to="/contracts"
+                to="/applications"
                 className={({ isActive }) =>
                   `transition-all duration-150 px-4 py-3 font-semibold rounded-md text-sm flex gap-3 items-center hover:bg-zinc-300 ${isActive ? "bg-[#E3E8E9] hover:bg-zinc-300" : ""}`
                 }
